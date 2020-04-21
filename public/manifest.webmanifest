@@ -1,0 +1,15 @@
+{
+  "background_color": "#ABD3A4",
+  "description": "Connect between Sign Language interpreters to clients",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "logo/logo_blue192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "SignNow",
+  "short_name": "SignNow",
+  "start_url": "index.html"
+}

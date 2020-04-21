@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
+    integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    .app {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      z-index: 100;
+      background-color: #eee;
+      display: grid;
+      grid-template-columns: 7fr 3fr;
+      grid-template-rows: 9fr 1fr;
+    }
+
+    .bar {
+      height: 100%;
+      background: #0b3a87;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .footer {
+      width: 100%;
+      background-color: #eb892b;
+      color: white;
+      text-align: center;
+      grid-column-end: 3;
+      grid-column-start: 1;
+      cursor: pointer;
+    }
+
+    .login {
+      color: white;
+      height: fit-content;
+      text-align: center;
+    }
+
+    .tryAgain {
+      background: #ABD3A4 !important;
+      color: black !important;
+      border-color: black;
+    }
+
+    .user_card {
+      height: 75%;
+      width: 320px;
+      margin-top: auto;
+      margin-bottom: auto;
+      background: url(assets/img/2084.png);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+    }
+
+    .brand_logo_container {
+      position: absolute;
+      height: 170px;
+      width: 170px;
+      top: -75px;
+      border-radius: 50%;
+      background: #eeeeee;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .brand_logo {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid white;
+      background: #ABD3A4;
+    }
+
+    .form_container {
+      margin-top: 100px;
+    }
+
+    .login_btn {
+      width: 100%;
+      background: #0b3a87;
+      color: white;
+    }
+
+    .login_btn:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    .login_container {
+      padding: 0 2rem;
+    }
+
+    .input-group-text {
+      background: #0b3a87 !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+
+    .input_user,
+    .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    .form {
+      margin-top: 10px;
+    }
+
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+      background-color: #0b3a87 !important;
+    }
+
+    .add-button {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .app {
+        grid-template-rows: 6fr 3fr 1fr;
+        grid-template-columns: auto;
+      }
+
+      .footer {
+        grid-column-end: 2;
+        grid-column-start: 1;
+      }
+    }
+  </style>
+  <title>SignNow</title>
+  <script src="index.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+
+<body>
+
+  <div class="app">
+    <div class="content">
+      <div class="container h-100 form">
+        <div class="d-flex justify-content-center h-100">
+          <div class="user_card">
+            <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                <img src="logo/logo.png" class="brand_logo" alt="Logo">
+              </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+              <form action="">
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input type="text" id="userInput" class="form-control input_user" value="" placeholder="username">
+                </div>
+                <div class="input-group mb-2">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                  </div>
+                  <input type="password" id="passInput" class="form-control input_pass" value="" placeholder="password">
+                </div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+                  <button type="button" id="log" name="button" class="btn login_btn">כניסה</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bar">
+      <div id="hello" class="container login">
+        <h1>שלום אורח</h1>
+      </div>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">תיבת טקסט</li>
+
+        </ul>
+      </div>
+    </div>
+    <div id="add-button" class="footer">
+      <h2>Developed By
+          <picture>
+            <img sizes="(max-width: 1400px) 9%, 100px" srcset="
+          logo/logo_azrk2q_c_scale,w_200.png 200w,
+          logo/logo_azrk2q_c_scale,w_375.png 375w,
+          logo/logo_azrk2q_c_scale,w_515.png 515w,
+          logo/logo_azrk2q_c_scale,w_629.png 629w,
+          logo/logo_azrk2q_c_scale,w_740.png 740w,
+          logo/logo_azrk2q_c_scale,w_848.png 848w,
+          logo/logo_azrk2q_c_scale,w_942.png 942w,
+          logo/logo_azrk2q_c_scale,w_1031.png 1031w,
+          logo/logo_azrk2q_c_scale,w_1125.png 1125w,
+          logo/logo_azrk2q_c_scale,w_1214.png 1214w,
+          logo/logo_azrk2q_c_scale,w_1320.png 1320w,
+          logo/logo_azrk2q_c_scale,w_1400.png 1400w" src="logo/logo_azrk2q_c_scale,w_1400.png" alt="">
+          </picture>
+      </h2>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js"
+    integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k" crossorigin="anonymous">
+  </script>
+  <script defer src="/__/firebase/7.13.1/firebase-app.js"></script>
+  <script defer src="/__/firebase/7.13.1/firebase-auth.js"></script>
+  <script defer src="/__/firebase/7.13.1/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        let app = firebase.app();
+        firebase.auth().onAuthStateChanged(user => {})
+      } catch {
+
+      }
+    });
+    const log = document.getElementById("log");
+    log.addEventListener("click",
+      function () {
+        firebase.auth().signInWithEmailAndPassword(document.getElementById("userInput").value, document
+            .getElementById("passInput").value)
+          .then(res => {
+            document.getElementById("hello").innerHTML = "<h1>" + res.user.email.split("@")[0] + "</h1>";
+            document.getElementsByClassName("content")[0].innerHTML =
+              '<iframe class="frame" width="100%" height="500px" src="//appr.tc/r/12345" allow="geolocation; microphone; camera"></iframe>'
+            document.getElementsByClassName("frame")[0].src = "//appr.tc/r/" + Date.now().toString().substring(0,
+            9);
+          })
+          .catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            log.innerText = "נסה שוב";
+            log.classList.toggle("tryAgain");
+          });
+      }
+    )
+
+    var input = document.getElementById("passInput");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("log").click();
+      }
+    });
+  </script>
+</body>
+
+</html>
