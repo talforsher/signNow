@@ -8,8 +8,12 @@
     ],
     "rewrites": [
       {
-        "source": "/interpreter",
-        "destination": "/VIP-interpreter-area.html"
+        "source": "/VIP",
+        "destination": "/VIP.html"
+      },
+      {
+        "source": "/vip",
+        "destination": "/VIP.html"
       },
       {
         "source": "/data",

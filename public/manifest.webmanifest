@@ -4,8 +4,8 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "logo/logo_blue192.png",
-      "sizes": "192x192",
+      "src": "logo/logo_blue512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],

@@ -31,13 +31,20 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 // [END initialize_firebase_in_sw]
 
-self.addEventListener('notificationclick', function(event) {
-  event.notification.close();
+// Handle incoming messages. Called when:
+// - a message is received while the app has focus
+// - the user clicks on an app notification created by a service worker
+//   `messaging.setBackgroundMessageHandler` handler.
 
-  const myPromise = new Promise(function(resolve, reject) {
-    window.open("hey");
-    resolve();
-  });
+messaging.setBackgroundMessageHandler(function(payload) {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  // Customize notification here
+  const notificationTitle = 'SignNow';
+  const notificationOptions = {
+    body: 'בקשת תרגום',
+    icon: '/logo/logo_blue192.png'
+  };
 
-  event.waitUntil(myPromise);
+  return self.registration.showNotification(notificationTitle,
+    notificationOptions);
 });

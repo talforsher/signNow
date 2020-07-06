@@ -3,8 +3,13 @@ self.addEventListener('install', function(e) {
     caches.open('video-store').then(function(cache) {
       return cache.addAll([
         '/index.html',
-        '/index.js',
-        '/logo/logo_blue192.png'
+        '/VIP-interpreter-area.html',
+        '/assets/interPage.js',
+        '/assets/index.js',
+        '/assets/script.js',
+        '/logo/logo_blue192.png',
+        '/logo/logo_blue512.png',
+        '/logo/logo1400.png'
       ]);
     })
   );

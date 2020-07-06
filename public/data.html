@@ -137,7 +137,7 @@
             firebase.firestore().collection("users").doc(e.dataset.set).update({
                 "role": "interpreter"
             }).then(e.innerText = "interpreter")
-        if (e.innerText == "interpreter")
+        else if (e.innerText == "interpreter")
             firebase.firestore().collection("users").doc(e.dataset.set).update({
                 "role": "user"
             }).then(e.innerText = "user")
